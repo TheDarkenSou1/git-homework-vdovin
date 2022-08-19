@@ -23,12 +23,12 @@ else:
 
 print("Завдання 3")
 year = int(input("Введіть рік: "))
-if year % 4 == 0 and not year % 100 == 0:
+if not year % 4 and year % 100:
     print(year, "- високосний рік!\n")
-elif year % 400 == 0:
-    print(year, "- високосний рік!\n")
-else:
+elif year % 400:
     print(year, "- невисокосний рік.\n")
+else:
+    print(year, "- високосний рік!\n")
 
 print("Завдання 4")
 a = int(input("Введіть 1 сторону трикутника: "))
