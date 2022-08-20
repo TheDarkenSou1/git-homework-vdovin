@@ -5,9 +5,9 @@ num3 = int(input("Введіть 3 число: "))
 num4 = int(input("Введіть 4 число: "))
 if num1 > num2 and num1 > num3 and num1 > num4:
     print("Найбільше число:", num1, "\n")
-elif num2 > num1 and num2 > num3 and num2 > num4:
+elif num2 > num3 and num2 > num4:
     print("Найбільше число:", num2, "\n")
-elif num3 > num1 and num3 > num2 and num3 > num4:
+elif num3 > num4:
     print("Найбільше число:", num3, "\n")
 else:
     print("Найбільше число:", num4, "\n")
@@ -23,12 +23,10 @@ else:
 
 print("Завдання 3")
 year = int(input("Введіть рік: "))
-if not year % 4 and year % 100:
+if not year % 4 and year % 100 or not year % 400:
     print(year, "- високосний рік!\n")
-elif year % 400:
-    print(year, "- невисокосний рік.\n")
 else:
-    print(year, "- високосний рік!\n")
+    print(year, "- невисокосний рік.\n")
 
 print("Завдання 4")
 a = int(input("Введіть 1 сторону трикутника: "))
