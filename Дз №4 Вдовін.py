@@ -18,21 +18,12 @@ while True:
         break
 print("Завдання 2")
 number = input("Введіть число: ")
-M = list(map(int, number))
-a = 0
-b = -1
-is_palindrome = True
-for i in M:
-    if M[a] == M[b]:
-        a += 1
-        b -= 1
-        continue
-    else:
-        is_palindrome = False
-if is_palindrome == True:
-    print("Ваше число - паліндром.\n")
+M1 = list(number)
+M2 = list(number)[::-1]
+if M1 == M2:
+    print("Число - паліндром")
 else:
-    print("Ваше число - не паліндромом.\n")
+    print("Число - не паліндром")
 print("Завдання 3")
 X = int(input("Введіть координати X: "))
 Y = int(input("Введіть координати Y: "))
