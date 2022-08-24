@@ -2,9 +2,7 @@ import math
 print("Завдання 1")
 num = input("Введіть номер квитка: ")
 while True:
-    N = list(num)
-    for index in range(len(N)):
-        N[index] = int(N[index])
+    N = list(map(int, num))
     if len(N) % 2:
         print("Номер квитка має містити однакову\n"
               "кількість цифр з кожної сторони!\n")
@@ -20,9 +18,7 @@ while True:
         break
 print("Завдання 2")
 number = input("Введіть число: ")
-M = list(number)
-for index in range(len(M)):
-    M[index] = int(M[index])
+M = list(map(int, number))
 a = 0
 b = -1
 is_palindrome = True
