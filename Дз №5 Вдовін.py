@@ -84,20 +84,20 @@ print(prime_list, "\n")
 print("Завдання 2")
 a = int(input("Введіть ширину пісочного годинника (число непарне): "))
 for i in range(a, 0, -1):
+    n = (a - i) // 2
     if i % 2:
-        n = (a - i) // 2
         print(" " * n, end="")
-        for m in range(i):
-            print("*", end="")
+        print("*" * i, end="")
+
     else:
         continue
     print()
-for i in range(1, a + 1):
-    if i % 2 and i != 1:
-        n = (a - i) // 2
+for i in range(2, a + 1):
+    n = (a - i) // 2
+    if i % 2:
         print(" " * n, end="")
-        for m in range(i):
-            print("*", end="")
+        print("*" * i, end="")
+
     else:
         continue
     print()
