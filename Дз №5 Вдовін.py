@@ -88,7 +88,6 @@ for i in range(a, 0, -1):
     if i % 2:
         print(" " * n, end="")
         print("*" * i, end="")
-
     else:
         continue
     print()
@@ -97,7 +96,6 @@ for i in range(2, a + 1):
     if i % 2:
         print(" " * n, end="")
         print("*" * i, end="")
-
     else:
         continue
     print()
