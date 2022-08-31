@@ -6,19 +6,16 @@ print()
 print("Завдання 2")
 while True:
     name = input("Введіть ваше ім'я: ")
-    if name.isalpha() and name[0].isupper() and name[1:].islower():
-        print("Ваше ім'я:", name)
+    if name.isalpha():
+        print("Ваше ім'я:", name.title())
         break
     else:
         print("Ім'я введено некоректно.", end=" ")
 print()
 
 print("Завдання 3")
-string1 = input("Введіть рядок: ")
-summa = 0
-for i in string1:
-    summa += ord(i)
-print("Сума всіх кодів символів у рядку:", summa)
+res = sum(map(ord, input("Введіть рядок: ")))
+print("Сума всіх кодів символів у рядку:", res)
 
 print("Завдання 4")
 import math
