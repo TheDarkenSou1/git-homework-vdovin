@@ -10,7 +10,9 @@ cat_description = {"name": "Tom", "age": 2, "color": "grey",
                    "cat character": "not as friendly as we expected"}
 for desc in cat_description:
     print(desc, ":", cat_description.get(desc))
+print()
 
+print("Завдання 3")
 text = input("Введіть рядок: ")
 text_list = list(text.replace(" ", ""))
 slovar = {}
@@ -21,7 +23,7 @@ for letter in text_list:
 print()
 
 print("~ ДОДАТКОВе ДЗ ~")
-print("Завдання1")
+print("Завдання 1")
 from num2words import num2words
 money = input("How much money do you have? \n")
 money = money.split(",")
