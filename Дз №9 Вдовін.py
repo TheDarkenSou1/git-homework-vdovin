@@ -1,25 +1,22 @@
 print("Завдання 1")
 list1 = [1, -5, 20, 100, -60]
-
 def func(n):
-    print("Максимальне число у списку:", max(n), "\n")
+    return max(n)
 
-func(list1)
+print("Максимальне число у списку:", func(list1))
 
 print("Завдання 2")
-def func2():
-    x1 = int(input("Введіть 1 число: "))
-    x2 = int(input("Введіть 2 число: "))
-    x_str = input("Введіть рядок: ")
+def func2(x1, x2, x_str):
     res = x_str + str(x1 + x2)
     return res
 
-print("Конкатенація рядка та суми 2 чисел:", func2())
+x1 = int(input("Введіть 1 число: "))
+x2 = int(input("Введіть 2 число: "))
+x_str = input("Введіть рядок: ")
+print("Конкатенація рядка та суми 2 чисел:", func2(x1, x2, x_str))
 
 print("Завдання 3")
-def rectangle():
-    h = int(input("Введіть висоту прямокутника: "))
-    w = int(input("Введіть ширину прямокутника: "))
+def rectangle(h, w):
     for i in range(1, h + 1):
         for m in range(1, w + 1):
             if i == 1 or i == h:
@@ -30,7 +27,9 @@ def rectangle():
                 print(" ", end=" ")
         print()
     print()
-rectangle()
+h = int(input("Введіть висоту прямокутника: "))
+w = int(input("Введіть ширину прямокутника: "))
+rectangle(h, w)
 
 print("Завдання 4")
 def linear_search(list_el, number):
@@ -50,9 +49,10 @@ number = int(input("Яке число будемо шукати? "))
 linear_search(list_el, number)
 
 print("Завдання 5")
-def func3():
-    string1 = input("Введіть рядок: ")
+def func3(string1):
     string2 = string1.split()
     return print("Кількість слів у рядку:", len(string2))
-func3()
+
+string1 = input("Введіть рядок: ")
+func3(string1)
 
