@@ -16,4 +16,6 @@ def func(n):
 list1 = func(3)
 list2 = func(5)
 list3 = set(list1) & set(list2)
+print("Перший список:", list1)
+print("Другий список:", list2)
 print("Числа, які є в обох списках:", list3)
