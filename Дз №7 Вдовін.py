@@ -22,7 +22,7 @@ for letter in text_list:
         print(letter, '-', slovar[letter])
 print()
 
-print("~ ДОДАТКОВе ДЗ ~")
+print("~ ДОДАТКОВЕ ДЗ ~")
 print("Завдання 1")
 from num2words import num2words
 money = input("How much money do you have? \n")
