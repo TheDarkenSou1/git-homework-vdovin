@@ -66,7 +66,7 @@ class Order:
         summa = 0
         for item, quantity in self.cart.items():
             summa += item.price * quantity
-        return f"Сума заказу: {summa}\n"
+        return summa
 
     def __str__(self):
         res = f"{self.customer}\n"
