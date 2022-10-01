@@ -62,6 +62,9 @@ class Order:
                 self.cart[value] += quan
             else:
                 self.cart[value] = quan
+        else:
+            if not isinstance(value, Products):
+                raise TypeError('Smth wrong with value type')
 
 
     def total(self):
@@ -77,10 +80,12 @@ class Order:
 
         return res
 
-pr1 = Products("Печенье", "дадада")
+
+pr1 = Products("Печенье", 16)
 pr2 = Products("Конфеты", 30)
 pr3 = Products("Зефир", 40)
-list_pr = [pr1, pr2, pr3]
+pr4 = Customer("Зефир", 40, "fdsofsd", "okfowkf")  # Виклик змінної, яка не належить класу Products
+list_pr = [pr1, pr2, pr3, pr4]
 client3 = Customer("Вдовін", "Андрій", "Максимович", "0994123299")
 
 try:
@@ -88,6 +93,8 @@ try:
     order1.add_product(pr1, 3)
     order1.add_product(pr2, 2)
     order1.add_product(pr3, 1)
+    order1.add_product(pr4, 1)  # Спроба додати в метод add_product значення змінної, що не належить класу Product
+                                # Виклик помилки TypeError у рядку номер 67
     for pr in list_pr:
         if type(pr.price) == str:
             raise PriceError2("Error. Price is integer or floating, but not string")
@@ -136,7 +143,7 @@ class Student(Person):
     """
     info student
     """
-    def __init__(self, surname, name, birthday_data):
+    def __init__(self, surname : str, name : str, birthday_data):
         super().__init__(surname, name)
         self.birthday_data = birthday_data
 
@@ -148,7 +155,7 @@ class Group:
     creation the group of students
     """
     count = 0
-    def __init__(self, title, max_students = 10):
+    def __init__(self, title, max_students):
         self.max_students = max_students
         self.title = title
         self.__students = []
@@ -176,6 +183,8 @@ class Group:
         if isinstance(student, Student):
             if student in self.__students:
                 self.__students.remove(student)
+        else:
+            raise TypeError('Smth wrong with data type')
 
     def __str__(self):
         return f"{self.title}\n" + "\n".join(map(str, self.__students))
@@ -192,7 +201,7 @@ st9 = Student("Полуниця", "Люба", "29.11.2001")
 st10 = Student("Батьківна", "Олена", "27.12.2000")
 
 try:
-    gr1 = Group("Python PRO", max_students=9)
+    gr1 = Group("Python PRO", max_students=10)
     gr1.add_students(st1)
     gr1.add_students(st2)
     gr1.add_students(st3)
