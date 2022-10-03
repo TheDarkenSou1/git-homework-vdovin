@@ -115,6 +115,7 @@ else:
         print(order1)
         print(order1.total())
 
+
 print("Завдання 2")
 
 
@@ -165,7 +166,7 @@ class Group:
             raise TypeError('Smth wrong with data type')
 
         if len(self.__students) >= self.max_students:
-            raise ValueError('Max limit exceed')
+            raise LimitGroupError(self.max_students, "Max limit error")
 
         if student in self.__students:
             raise ValueError('Student already registered')
