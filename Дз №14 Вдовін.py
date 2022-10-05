@@ -53,7 +53,7 @@ class ProperFraction:
                 return f"  {new_numerator % self.denominator}\n{real_num} ---\n   {self.denominator}"
             elif new_numerator > self.denominator and not new_numerator % self.denominator:
                 real_num = new_numerator // self.denominator
-                return f"  {real_num}"
+                return f"{real_num}\n---\n 1"
             else:
                 return f"{new_numerator}\n---\n {self.denominator}"
         else:
@@ -69,7 +69,7 @@ class ProperFraction:
                     return f"  {new_numerator % self.denominator}\n{real_num} ---\n   {self.denominator}"
                 elif new_numerator > self.denominator and not new_numerator % self.denominator:
                     real_num = new_numerator // self.denominator
-                    return f"  {real_num}"
+                    return f"{real_num}\n---\n 1"
                 else:
                     return f"{new_numerator}\n---\n {self.denominator}"
 
@@ -82,7 +82,7 @@ class ProperFraction:
                 return f"  {new_numerator % self.denominator}\n{real_num} ---\n   {self.denominator}"
             elif new_numerator >= self.denominator and not new_numerator % self.denominator:
                 real_num = new_numerator // self.denominator
-                return f"  {real_num}"
+                return f"{real_num}\n---\n 1"
             else:
                 return f"{new_numerator}\n---\n {self.denominator}"
         else:
@@ -96,7 +96,7 @@ class ProperFraction:
                     return f"  {new_numerator % self.denominator}\n{real_num} ---\n   {self.denominator}"
                 elif new_numerator >= self.denominator and not new_numerator % self.denominator:
                     real_num = new_numerator // self.denominator
-                    return f"  {real_num}"
+                    return f"{real_num}\n---\n 1"
                 else:
                     return f"{new_numerator}\n---\n {self.denominator}"
 
@@ -108,25 +108,25 @@ class ProperFraction:
             return f"  {new_numerator % new_denominator}\n{real_num} ---\n   {new_denominator}"
         elif new_numerator >= new_denominator and not new_numerator % new_denominator:
             real_num = new_numerator // new_denominator
-            return f"  {real_num}"
+            return f"{real_num}\n---\n 1"
         else:
             return f"{new_numerator}\n---\n {new_denominator}"
 
 
     def __str__(self):
-        if self.numerator > self.denominator:
+        if self.numerator > self.denominator and self.numerator % self.denominator:
             real_num = self.numerator // self.denominator
             return f"  {self.numerator % self.denominator}\n{real_num} ---\n   {self.denominator}"
-        elif self.numerator == self.denominator:
+        elif self.numerator >= self.denominator and not self.numerator % self.denominator:
             real_num = self.numerator // self.denominator
-            return f"  {real_num}"
+            return f"{real_num}\n---\n 1"
         else:
             return f"{self.numerator}\n---\n {self.denominator}"
 
 
 
 drob1 = ProperFraction(5, 3)
-drob2 = ProperFraction(2, 4)
+drob2 = ProperFraction(20, 4)
 print("Перший дріб:\n", drob1)
 print("Другий дріб:\n", drob2)
 print("Сума:\n", drob1 + drob2, "\n")
