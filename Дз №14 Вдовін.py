@@ -4,7 +4,7 @@ print("Завдання 1")
 
 class Rectangle:
 
-    def __init__(self, height, width):
+    def __init__(self, height: int, width: int):
         self.height = height
         self.width = width
 
@@ -101,16 +101,16 @@ class ProperFraction:
                     return f"{new_numerator}\n---\n {self.denominator}"
 
     def __mul__(self, other):
-        new_numerator = self.numerator * other.numerator
-        new_denominator = self.denominator * other.denominator
-        if new_numerator > new_denominator and new_numerator % new_denominator:
-            real_num = new_numerator // new_denominator
-            return f"  {new_numerator % new_denominator}\n{real_num} ---\n   {new_denominator}"
-        elif new_numerator >= new_denominator and not new_numerator % new_denominator:
-            real_num = new_numerator // new_denominator
-            return f"{real_num}\n---\n 1"
-        else:
-            return f"{new_numerator}\n---\n {new_denominator}"
+            new_numerator = self.numerator * other.numerator
+            new_denominator = self.denominator * other.denominator
+            if new_numerator > new_denominator and new_numerator % new_denominator:
+                real_num = new_numerator // new_denominator
+                return f"  {new_numerator % new_denominator}\n{real_num} ---\n   {new_denominator}"
+            elif new_numerator >= new_denominator and not new_numerator % new_denominator:
+                real_num = new_numerator // new_denominator
+                return f"{real_num}\n---\n 1"
+            else:
+                return f"{new_numerator}\n---\n {new_denominator}"
 
 
     def __str__(self):
@@ -127,8 +127,13 @@ class ProperFraction:
 
 drob1 = ProperFraction(5, 3)
 drob2 = ProperFraction(20, 4)
-print("Перший дріб:\n", drob1)
-print("Другий дріб:\n", drob2)
-print("Сума:\n", drob1 + drob2, "\n")
-print("Різниця:\n", drob1 - drob2, "\n")
-print("Добуток:\n", drob1 * drob2, "\n")
+try:
+    print("Перший дріб:\n", drob1)
+    print("Другий дріб:\n", drob2)
+    print("Сума:\n", drob1 + drob2, "\n")
+    print("Різниця:\n", drob1 - drob2, "\n")
+    print("Добуток:\n", drob1 * drob2, "\n")
+except ZeroDivisionError as error:
+    print(error, "\n Не існує дробового виразу з 0 у знаменнику!")
+else:
+    print("Дробові вирази введено коректно.")
