@@ -40,12 +40,19 @@ print("\nЗавдання 2")
 
 class ProperFraction:
 
-    def __init__(self, numerator, denominator):
+    def __init__(self, numerator : int, denominator : int):
         self.numerator = numerator
         self.denominator = denominator
+        if not isinstance(self.numerator, int):
+            raise TypeError("У чисельнику має бути число")
+        if not isinstance(self.denominator, int):
+            raise TypeError("У знаменнику має бути число")
+        if not denominator:
+            raise ZeroDivisionError("Не існує дробового виразу з 0 у знаменнику")
 
 
     def __add__(self, other):
+
         if self.denominator == other.denominator:
             new_numerator = self.numerator + other.numerator
             if new_numerator > self.denominator and new_numerator % self.denominator:
@@ -75,6 +82,7 @@ class ProperFraction:
 
 
     def __sub__(self, other):
+
         if self.denominator == other.denominator:
             new_numerator = self.numerator - other.numerator
             if new_numerator > self.denominator and new_numerator % self.denominator:
@@ -127,13 +135,9 @@ class ProperFraction:
 
 drob1 = ProperFraction(5, 3)
 drob2 = ProperFraction(20, 4)
-try:
-    print("Перший дріб:\n", drob1)
-    print("Другий дріб:\n", drob2)
-    print("Сума:\n", drob1 + drob2, "\n")
-    print("Різниця:\n", drob1 - drob2, "\n")
-    print("Добуток:\n", drob1 * drob2, "\n")
-except ZeroDivisionError as error:
-    print(error, "\n Не існує дробового виразу з 0 у знаменнику!")
-else:
-    print("Дробові вирази введено коректно.")
+print("Перший дріб:\n", drob1)
+print("Другий дріб:\n", drob2)
+print("Сума:\n", drob1 + drob2, "\n")
+print("Різниця:\n", drob1 - drob2, "\n")
+print("Добуток:\n", drob1 * drob2, "\n")
+
