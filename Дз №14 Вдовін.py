@@ -1,40 +1,40 @@
 import math
 
-# print("Завдання 1")
-#
-# class Rectangle:
-#
-#     def __init__(self, height, width):
-#         self.height = height
-#         self.width = width
-#
-#     def square_rectangle(self):
-#         square = self.height * self.width
-#         return square
-#
-#     def __gt__(self, other):
-#         return self.square_rectangle() > other.square_rectangle()
-#
-#     def __add__(self, other):
-#         new_rect = self.square_rectangle() + other.square_rectangle()
-#         return new_rect
-#
-#     def __mul__(self, other):
-#         return self.square_rectangle() * other
-#
-#     def __str__(self):
-#         return f"Висота прямокутника: {self.height}, ширина прямокутника: {self.width}"
-#
-#
-# rect1 = Rectangle(4, 5)
-# rect2 = Rectangle(3, 4)
-# print(rect1)
-# print(rect2)
-# print("Площа 1-го прямокутника: ", rect1.square_rectangle())
-# print("Площа 2-го прямокутника: ", rect2.square_rectangle())
-# print("Порівняння:", rect1 > rect2)
-# print("Складання двох площин прямокутників:", rect1 + rect2)
-# print("Множення площі прямокутника на задане число:", rect1 * 3)
+print("Завдання 1")
+
+class Rectangle:
+
+    def __init__(self, height, width):
+        self.height = height
+        self.width = width
+
+    def square_rectangle(self):
+        square = self.height * self.width
+        return square
+
+    def __gt__(self, other):
+        return self.square_rectangle() > other.square_rectangle()
+
+    def __add__(self, other):
+        new_rect = self.square_rectangle() + other.square_rectangle()
+        return new_rect
+
+    def __mul__(self, other):
+        return self.square_rectangle() * other
+
+    def __str__(self):
+        return f"Висота прямокутника: {self.height}, ширина прямокутника: {self.width}"
+
+
+rect1 = Rectangle(4, 5)
+rect2 = Rectangle(3, 4)
+print(rect1)
+print(rect2)
+print("Площа 1-го прямокутника: ", rect1.square_rectangle())
+print("Площа 2-го прямокутника: ", rect2.square_rectangle())
+print("Порівняння:", rect1 > rect2)
+print("Складання двох площин прямокутників:", rect1 + rect2)
+print("Множення площі прямокутника на задане число:", rect1 * 3)
 
 print("Завдання 2")
 
@@ -116,7 +116,7 @@ class ProperFraction:
     def __str__(self):
         if self.numerator > self.denominator:
             real_num = self.numerator // self.denominator
-            return f"  {self.numerator}\n{real_num} ---\n   {self.denominator}"
+            return f"  {self.numerator % self.denominator}\n{real_num} ---\n   {self.denominator}"
         elif self.numerator == self.denominator:
             real_num = self.numerator // self.denominator
             return f"  {real_num}"
@@ -125,9 +125,8 @@ class ProperFraction:
 
 
 
-
 drob1 = ProperFraction(5, 3)
-drob2 = ProperFraction(2, 3)
+drob2 = ProperFraction(2, 4)
 print("Перший дріб:\n", drob1)
 print("Другий дріб:\n", drob2)
 print("Сума:\n", drob1 + drob2, "\n")
