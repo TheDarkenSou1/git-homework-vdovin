@@ -134,7 +134,7 @@ class ProperFraction:
 
 
 drob1 = ProperFraction(5, 3)
-drob2 = ProperFraction(20, 4)
+drob2 = ProperFraction(2, 4)
 print("Перший дріб:\n", drob1)
 print("Другий дріб:\n", drob2)
 print("Сума:\n", drob1 + drob2, "\n")
