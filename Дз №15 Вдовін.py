@@ -181,15 +181,16 @@ class OrderIterator:
         self.order = order
         self.index = 0
 
-    def __iter__(self):
-        return self
-
     def __next__(self):
         if self.index < len(self.order):
             self.index += 1
             return self.order[self.index - 1]
         else:
             raise StopIteration
+
+    def __iter__(self):
+        self.index = 0
+        return self
 
 
 class Order:
