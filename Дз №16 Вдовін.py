@@ -62,8 +62,8 @@ print("\n")
 print("Завдання 4")
 
 finish = int(input("До якого числа будемо йти? "))
-list_cubes = []
-list_el_adder = [list_cubes.append(el ** 3) for el in range(2, finish + 1)]
+list_el_adder = [el ** 3 for el in range(2, finish + 1)]
+list_cubes = list(list_el_adder)
 print(list_cubes)
 
 
