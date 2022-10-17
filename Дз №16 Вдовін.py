@@ -2,10 +2,11 @@ print("Завдання 1")
 
 def geom_prog(n, q, count):
     degree = 0
-    index = 1
+    index = 0
     while index < count:
         yield (n * q ** (degree))
         degree += 1
+        index += 1
 
 count = int(input("Кількість елементів у послідовності? "))
 prog = geom_prog(2, 4, count)
@@ -13,14 +14,33 @@ prog = geom_prog(2, 4, count)
 for el in prog:
     if el > 2100:
         prog.close()
-    else:
-        print(el, end=" ")
-print()
+    print(el, end=" ")
+print("\n")
 
 print("Завдання 2")
-generator = (x + 3 for x in range(20) if x % 2)
-for el in generator:
-    print(el, end=" ")
+def _range(*args):
+    start, stop, step = 0, None, 1
+    if len(args) == 1:
+        stop = args[0]
+    elif len(args) == 2:
+        start, stop = args
+    elif len(args) == 3:
+        start, stop, step = args
+    else:
+        raise TypeError()
+
+    if step > 0 and (step < start):
+        raise ValueError()
+    if step < 0 and (stop > start):
+        raise ValueError()
+    if step == 0:
+        raise ValueError()
+
+    while abs(start) < abs(stop):
+        yield (start + 3)
+        start += step
+
+print(*_range(1, 20))
 print()
 
 print("Завдання 3")
@@ -37,7 +57,7 @@ def prime_generator(x):
 a = prime_generator(20)
 for el in a:
     print(el, end =" ")
-print()
+print("\n")
 
 print("Завдання 4")
 
