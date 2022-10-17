@@ -14,13 +14,13 @@ for el in prog:
     if el > 2100:
         prog.close()
     else:
-        print(el, end=", ")
+        print(el, end=" ")
 print()
 
 print("Завдання 2")
 generator = (x + 3 for x in range(20) if x % 2)
 for el in generator:
-    print(el, end=", ")
+    print(el, end=" ")
 print()
 
 print("Завдання 3")
@@ -36,7 +36,7 @@ def prime_generator(x):
 
 a = prime_generator(20)
 for el in a:
-    print(el, end =", ")
+    print(el, end =" ")
 print()
 
 print("Завдання 4")
