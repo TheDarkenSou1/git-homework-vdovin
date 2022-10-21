@@ -77,4 +77,4 @@ def func(list1):
 list1 = [2, 5, 1, 7, -3, 6, 12]
 
 f = func(list1)
-print(f())
+print("Сума отриманого перелік чисел: ", f())
