@@ -1,4 +1,5 @@
 print("Завдання №1")
+
 class Counter:
 
     count = 0
@@ -8,24 +9,23 @@ class Counter:
 
     def __call__(self, *args, **kwargs):
         self.count += 1
-        return self.count
-
+        return self.f(*args, **kwargs)
 
 @Counter
 def decor_func(a):
     return a * a
 
 
-n = decor_func(2)
-m = decor_func(3)
-print(decor_func.count, "\n")
+print(decor_func(3))
+print(decor_func(5))
+print("Функція викликалася:", decor_func.count, "рази.\n")
 
 print("Завдання №2")
 
 list_func = []
 
 def function_adder(f):
-    def add_func(*arg):
+    def add_func(*args, **kwargs):
         if f not in list_func:
             list_func.append(f)
         return list_func
@@ -64,10 +64,11 @@ print("Завдання 3")
 def adder_to_file(f):
     def add_string(s):
         name_class = s.__class__.__name__
+        res = f(s)
         file = open(f"{name_class}.txt", "w+")
-        file.write(f(s))
+        file.write(res)
         file.close()
-        return f(s)
+        return res
     return add_string
 
 
@@ -83,7 +84,7 @@ class Text:
 
 text = Text("Hello world!")
 print(text, "\n")
-#
+
 print("Завдання 4")
 import time
 
@@ -98,7 +99,7 @@ def time_tracker(count, file_name):
                 file = open(f"{file_name}.txt", "a")
                 file.write(f"{el + 1} time: {end - start}\n")
                 file.close()
-            return
+            return f
         return func_list
     return dec_function
 
