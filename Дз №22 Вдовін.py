@@ -41,5 +41,5 @@ class Something:
 
 ABC_Class.register(Something)
 
-smth = Something("Щось")
+smth = Something("Щось там")
 print(isinstance(smth, ABC_Class))
